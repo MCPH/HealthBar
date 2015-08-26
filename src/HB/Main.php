@@ -26,7 +26,7 @@ $group = $this->getServer()->getPluginManager()->getPlugin("PurePerms")->getUser
 if($this->getServer()->getPluginManager()->getPlugin("PurePerms") === null){
 $p->setNameTag($p->getName()."\n".($player->getHealth() / $player->getMaxHealth() * 100)."%");
 }else{
-	$p->setNameTag("[".$groupname."]".p->getName()."\n".($player->getHealth() / $player->getMaxHealth() * 100)."%");
+	$p->setNameTag("[".$groupname."]".$p->getName()."\n".($player->getHealth() / $player->getMaxHealth() * 100)."%");
 }
 }
 }
