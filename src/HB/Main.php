@@ -21,8 +21,10 @@ $this->getServer()->getPluginManager()->registerEvents($this,$this);
 
 public function onJoin(PlayerJoinEvent $ev){
 $p=$ev->getPlayer();
-$group = $this->getServer()->getPluginManager()->getPlugin("PurePerms")->getUser($player)->getGroup();
-		$groupname = $group->getName();
+$this->PurePerms = $this->getServer()->getPluginManager()->getPlugin("PurePerms");
+        $group = $this->PurePerms->getUserDataMgr($p)->getGroup($p);
+        
+        $groupname = $group->getName();
 if($this->getServer()->getPluginManager()->getPlugin("PurePerms") === null){
 $p->setNameTag($p->getName()."\n".($player->getHealth() / $player->getMaxHealth() * 100)."%");
 }else{
