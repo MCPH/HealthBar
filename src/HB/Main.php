@@ -13,7 +13,8 @@ use pocketmine\event\entity\EntityDamageEvent;
 class Main extends PluginBase implements Listener{
 
 	public function onEnable(){
-		$this->getServer()->getLogger()->info("[HB]HealthBar Loaded");
+		$this->getLogger()->info(TextFormat::YELLOW . "[" . TextFormat::GOLD . "HealthBar" . TextFormat::YELLOW. "] " . TextFormat::GREEN . "Plugin has been enabled!");
+		$this->getLogger()->info(TextFormat::YELLOW . "[" . TextFormat::GOLD . "HealthBar" . TextFormat::YELLOW. "] " . TextFormat::GREEN . "Created by " . TextFormat::WHITE . "SavionLegendZzz");
 		$this->getServer()->getPluginManager()->registerEvents($this,$this);
 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new Checker($this),10); 
 	}
